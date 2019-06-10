@@ -1,0 +1,12 @@
+.DS_Store
+
+# Logs
+*.log
+log.txt
+
+# Wills Env
+.vscode
+
+# Build System
+node_modules
+build

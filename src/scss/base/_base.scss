@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button:focus,
+button:active,
+a:focus,
+a:active {
+  outline: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow: hidden;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: calc(100% - 4rem);
+}
+
+.wrapper-sm {
+  margin: 0 auto;
+  max-width: 800px;
+  width: calc(100% - 4rem);
+}
+
+@include media('>=#{$lg}') {
+  .wrapper,
+  .wrapper-sm {
+    width: 90vw;
+  }
+}
