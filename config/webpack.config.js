@@ -1,9 +1,8 @@
 'use strict';
 
-const prefixer = require('postcss-prefix-selector');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const paths = require('./paths');
 
 // Options for PostCSS as we reference these options twice
@@ -34,11 +33,6 @@ const postcssOptions = isProduction => {
 const extractCSS = new MiniCssExtractPlugin({
   filename: 'css/[name].css',
 });
-
-const styleLintConfig = {
-  configFile: paths.stylelint,
-  context: paths.styles,
-};
 
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
@@ -159,7 +153,6 @@ module.exports = (_, { mode }) => {
     },
     plugins: [
       new webpack.NamedModulesPlugin(),
-      new StyleLintPlugin(styleLintConfig),
       extractCSS,
       // Moment.js is an extremely popular library that bundles large locale files
       // by default due to how Webpack interprets its code. This is a practical
