@@ -5,12 +5,8 @@
 @tailwind base;
 
 @import './base/base';
-@import './components/buttons';
-@import './components/menu-toggle';
-@import './layout/header';
-@import './layout/footer';
-@import './utils/spacing';
-@import './utils/visually-hidden';
-@import './utils/animation';
+@import './components/module';
+@import './layout/module';
+@import './utils/module';
 
 @tailwind utilities;

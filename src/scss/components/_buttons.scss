@@ -1,11 +1,11 @@
-.cpc-button {
+.sc-button {
   @apply bg-black text-white font-sans uppercase px-4 py-2 inline-block text-sm font-bold border border-black text-center;
 
   &:hover {
     @apply bg-primary-dark border-primary-dark cursor-pointer;
   }
 
-  &.cpc-button--sm {
+  &.sc-button--sm {
     @apply text-sm py-1 px-2;
   }
 
@@ -17,11 +17,11 @@
     @apply bg-primary-dark border-primary-dark;
   }
 
-  &--secondary-light {
+  &--secondary {
     @apply bg-white border-white text-black;
   }
 
-  &--secondary-light:hover {
+  &--secondary:hover {
     @apply bg-transparent border-white text-white;
   }
 
@@ -30,22 +30,6 @@
   }
 
   &--outline:hover {
-    @apply bg-primary border-primary text-white;
-  }
-
-  &--outline-dark {
-    @apply bg-transparent text-white border-black;
-  }
-
-  &--outline-dark:hover {
-    @apply bg-black border-black text-white;
-  }
-
-  &--outline-light {
-    @apply bg-transparent text-white border-primary;
-  }
-
-  &--outline-light:hover {
     @apply bg-primary border-primary text-white;
   }
 
@@ -59,7 +43,7 @@
 }
 
 @include media('>=#{$md}') {
-  .cpc-button {
+  .sc-button {
     @apply px-6 py-3 text-base;
   }
 }
