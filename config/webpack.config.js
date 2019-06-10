@@ -154,7 +154,7 @@ module.exports = (_, { mode }) => {
     },
     plugins: [
       new webpack.NamedModulesPlugin(),
-      new CopyPlugin([{ from: 'static', to: 'build' }]),
+      new CopyPlugin([{ from: 'static' }]),
       extractCSS,
       // Moment.js is an extremely popular library that bundles large locale files
       // by default due to how Webpack interprets its code. This is a practical
