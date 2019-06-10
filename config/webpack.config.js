@@ -2,6 +2,7 @@
 
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const paths = require('./paths');
 
@@ -153,6 +154,7 @@ module.exports = (_, { mode }) => {
     },
     plugins: [
       new webpack.NamedModulesPlugin(),
+      new CopyPlugin([{ from: 'static', to: 'build' }]),
       extractCSS,
       // Moment.js is an extremely popular library that bundles large locale files
       // by default due to how Webpack interprets its code. This is a practical
