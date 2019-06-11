@@ -21,8 +21,25 @@
 }
 
 .hero__img::after {
-  @apply absolute;
+  @apply absolute w-full h-full top-0 left-0;
   content: '';
+  background-image: linear-gradient(
+    to top right,
+    rgba($white, 0.8),
+    rgba($white, 0) 60%
+  );
+}
+
+.about__heading {
+  font-size: 4vw;
+}
+
+.programs__bg {
+  background-image: linear-gradient(
+      rgba($secondary-dark, 0.3),
+      rgba($secondary-dark, 0.3)
+    ),
+    url('../images/sc_2.jpg');
 }
 
 @import './utils/module';
