@@ -1,44 +1,39 @@
 .sc-button {
-  @apply bg-black text-white font-sans uppercase px-4 py-2 inline-block text-sm font-bold border border-black text-center;
+  @apply relative bg-black text-white font-sans px-4 py-2 inline-block border border-black text-center leading-none;
 
-  &:hover {
-    @apply bg-primary-dark border-primary-dark cursor-pointer;
+  &::after {
+    @apply absolute w-full h-full bg-secondary;
+    content: '';
+    top: $s2;
+    left: $s2;
+    z-index: -1;
+    transition: all 0.1s ease-out;
+  }
+
+  &:hover::after {
+    transform: translate(-#{$s1}, -#{$s1});
+    transition: all 0.1s ease-in;
   }
 
   &.sc-button--sm {
-    @apply text-sm py-1 px-2;
+    @apply py-2 px-4;
+    padding-top: 0.7rem;
   }
 
   &--primary {
     @apply bg-primary border-primary;
   }
 
-  &--primary:hover {
-    @apply bg-primary-dark border-primary-dark;
-  }
-
   &--secondary {
     @apply bg-white border-white text-black;
-  }
-
-  &--secondary:hover {
-    @apply bg-transparent border-white text-white;
   }
 
   &--outline {
     @apply bg-transparent text-black border-primary;
   }
 
-  &--outline:hover {
-    @apply bg-primary border-primary text-white;
-  }
-
   &--outline-white {
     @apply bg-transparent text-white border-white;
-  }
-
-  &--outline-white:hover {
-    @apply bg-white text-black border-white;
   }
 }
 

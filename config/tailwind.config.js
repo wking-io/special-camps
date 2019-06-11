@@ -42,7 +42,6 @@ module.exports = {
         'sans-serif',
       ],
     },
-    fill: colors,
     extend: {},
   },
   variants: {

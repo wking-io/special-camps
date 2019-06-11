@@ -16,7 +16,6 @@
     "babel-preset-cgb": "1.6.0",
     "babel-preset-env": "1.7.0",
     "browserslist": "3.2.7",
-    "copy-webpack-plugin": "5.0.3",
     "css-loader": "2.1.1",
     "cssnano": "4.1.10",
     "eslint": "4.19.1",
@@ -47,7 +46,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development --watch --config=config/webpack.config.js",
+    "start":
+      "webpack --mode=development --watch --config=config/webpack.config.js",
     "build": "webpack --mode=production --config=config/webpack.config.js"
   }
 }

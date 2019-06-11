@@ -1,12 +1,7 @@
 {
   "root": true,
   "parser": "babel-eslint",
-  "extends": [
-    "wordpress",
-    "prettier",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
-  ],
+  "extends": ["prettier"],
   "env": {
     "browser": false,
     "es6": true,
@@ -16,21 +11,12 @@
     "sourceType": "module",
     "ecmaVersion": 8,
     "ecmaFeatures": {
-      "jsx": true,
       "experimentalObjectRestSpread": true
     }
   },
   "globals": {
-    "wp": true,
-    "wpApiSettings": true,
     "window": true,
     "document": true
-  },
-  "plugins": ["react", "jsx-a11y"],
-  "settings": {
-    "react": {
-      "pragma": "wp"
-    }
   },
   "rules": {
     "array-bracket-spacing": 0,
@@ -44,16 +30,6 @@
     "eol-last": "error",
     "eqeqeq": "error",
     "func-call-spacing": "error",
-    "jsx-a11y/label-has-for": [
-      "error",
-      {
-        "required": "id"
-      }
-    ],
-    "jsx-a11y/media-has-caption": "off",
-    "jsx-a11y/no-noninteractive-tabindex": "off",
-    "jsx-a11y/role-has-required-aria-props": "off",
-    "jsx-quotes": "error",
     "key-spacing": "error",
     "keyword-spacing": "error",
     "lines-around-comment": "off",
@@ -155,13 +131,6 @@
     "padded-blocks": ["error", "never"],
     "prefer-const": "error",
     "quote-props": ["error", "as-needed"],
-    "react/display-name": "off",
-    "react/jsx-equals-spacing": "error",
-    "react/jsx-key": "error",
-    "react/jsx-tag-spacing": "error",
-    "react/no-children-prop": "off",
-    "react/no-find-dom-node": "warn",
-    "react/prop-types": "off",
     "semi": "error",
     "semi-spacing": "error",
     "space-before-blocks": ["error", "always"],

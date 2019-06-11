@@ -7,6 +7,19 @@
 @import './base/base';
 @import './components/module';
 @import './layout/module';
+
+.hero__heading {
+  width: 48vw;
+  font-size: 4vw;
+  left: $s16;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero__img {
+  width: 70vw;
+}
+
 @import './utils/module';
 
 @tailwind utilities;

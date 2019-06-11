@@ -22,8 +22,8 @@ const resolveEntryJs = resolveEntry('.js');
 module.exports = {
   root: resolveOwn('.'),
   system: resolveSystem('.'),
-  build: resolveSystem('build'),
-  buildImages: resolveSystem('build/images'),
+  build: resolveSystem('dist/build'),
+  buildImages: resolveSystem('dist/build/images'),
   public: resolveSystem('public'),
   entry: resolveEntryJs(resolveSystem('src/js')),
   js: resolveSystem('src/js'),
