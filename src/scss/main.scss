@@ -20,6 +20,11 @@
   width: 70vw;
 }
 
+.hero__img::after {
+  @apply absolute;
+  content: '';
+}
+
 @import './utils/module';
 
 @tailwind utilities;
