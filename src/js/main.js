@@ -6,6 +6,7 @@ import '../images/sc_2.jpg';
 
 import { dom } from './modules/dom';
 import { setAttr } from './modules/attr';
+import { pipe } from './modules/utils';
 // import { setupMenu } from './modules/menu';
 
 // const menuToggle = dom('.menu-toggle');
@@ -14,19 +15,43 @@ import { setAttr } from './modules/attr';
 // setupMenu(menu, menuToggle);
 
 const logo = dom('[data-logo]');
-const parent = dom('[data-fixed]');
+const logoPos = logo.getBoundingClientRect();
+const header = dom('[data-fixed]');
 
-const manageHeader = bottom => () => {
-  if (bottom <= window.scrollY) {
+const manageHeader = (pos, parent) => e => {
+  if (pos <= window.scrollY) {
     setAttr('data-fixed', true, parent);
   } else {
     setAttr('data-fixed', false, parent);
   }
+
+  return e;
 };
 
-if (logo && parent) {
-  const { bottom } = logo.getBoundingClientRect();
-  const handleHeader = manageHeader(bottom + window.scrollY);
+const slideItem = dom('[data-slide-item]');
+const slide = dom('[data-slide');
+
+const manageSlide = (parent, item, halfItem) => e => {
+  const { top, bottom } = parent.getBoundingClientRect();
+  const parentTop = top + halfItem;
+  const parentBottom = bottom - halfItem;
+  const centerScreen = window.innerHeight / 2;
+  // console.log(parentTop, parentBottom, centerScreen);
+  if (parentTop <= centerScreen && parentBottom >= centerScreen) {
+    setAttr('data-slide-state', 'fixed', item);
+  } else if (parentBottom <= centerScreen) {
+    setAttr('data-slide-state', 'bottom', item);
+  } else {
+    setAttr('data-slide-state', 'top', item);
+  }
+
+  return e;
+};
+
+if (logo && header && slideItem && slide) {
+  const handleHeader = manageHeader(logoPos.bottom + window.scrollY, header);
+  const handleSlide = manageSlide(slide, slideItem, slideItem.offsetHeight / 2);
   handleHeader();
-  window.addEventListener('scroll', handleHeader);
+  handleSlide();
+  window.addEventListener('scroll', pipe(handleHeader, handleSlide));
 }

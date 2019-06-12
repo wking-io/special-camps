@@ -34,6 +34,19 @@
   font-size: 4vw;
 }
 
+[data-slide-state='fixed'] {
+  @apply fixed z-50 w-1/2 p-about left-0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+[data-slide-state='bottom'] {
+  @apply absolute z-50;
+  top: auto;
+  bottom: 0;
+  transform: translateY(0);
+}
+
 .programs__bg {
   background-image: linear-gradient(
       rgba($secondary-dark, 0.35),
