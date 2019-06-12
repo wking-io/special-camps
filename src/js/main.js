@@ -7,12 +7,6 @@ import '../images/sc_2.jpg';
 import { dom } from './modules/dom';
 import { setAttr } from './modules/attr';
 import { pipe } from './modules/utils';
-// import { setupMenu } from './modules/menu';
-
-// const menuToggle = dom('.menu-toggle');
-// const menu = dom(`#${getAttr('aria-controls', menuToggle)}`);
-
-// setupMenu(menu, menuToggle);
 
 const logo = dom('[data-logo]');
 const logoPos = logo.getBoundingClientRect();
@@ -36,7 +30,6 @@ const manageSlide = (parent, item, halfItem) => e => {
   const parentTop = top + halfItem;
   const parentBottom = bottom - halfItem;
   const centerScreen = window.innerHeight / 2;
-  // console.log(parentTop, parentBottom, centerScreen);
   if (parentTop <= centerScreen && parentBottom >= centerScreen) {
     setAttr('data-slide-state', 'fixed', item);
   } else if (parentBottom <= centerScreen) {
