@@ -3,19 +3,32 @@
   padding-top: 1.3rem;
   padding-bottom: 1.2rem;
 
-  &::after {
-    @apply absolute bg-secondary;
+  &::before {
+    @apply bg-secondary w-2 h-full absolute;
     content: '';
-    top: $s2;
-    left: $s2;
-    width: 100%;
-    height: calc(100% + 1px);
-    z-index: -1;
+    top: 8px;
+    left: 100%;
     transition: all 0.1s ease-out;
+    transform-origin: center left;
+  }
+
+  &::after {
+    @apply bg-secondary w-full h-2 absolute;
+    content: '';
+    top: 100%;
+    left: 8px;
+    z-index: 0;
+    transition: all 0.1s ease-out;
+    transform-origin: top center;
+  }
+
+  &:hover::before {
+    transform: translateY(-3px) scaleX(0.625);
+    transition: all 0.1s ease-in;
   }
 
   &:hover::after {
-    transform: translate(-4px, -4px);
+    transform: translateX(-3px) scaleY(0.625);
     transition: all 0.1s ease-in;
   }
 
@@ -26,6 +39,39 @@
 
   &--primary {
     @apply bg-primary border-primary;
+  }
+
+  &--secondary {
+    @apply bg-secondary border-secondary;
+  }
+
+  &--secondary::before {
+    @apply bg-secondary-dark w-2 h-full absolute;
+    content: '';
+    top: 8px;
+    left: 100%;
+    transition: all 0.1s ease-out;
+    transform-origin: center left;
+  }
+
+  &--secondary::after {
+    @apply bg-secondary-dark w-full h-2 absolute;
+    content: '';
+    top: 100%;
+    left: 8px;
+    z-index: 0;
+    transition: all 0.1s ease-out;
+    transform-origin: top center;
+  }
+
+  &--secondary:hover::before {
+    transform: translateY(-3px) scaleX(0.625);
+    transition: all 0.1s ease-in;
+  }
+
+  &--secondary:hover::after {
+    transform: translateX(-3px) scaleY(0.625);
+    transition: all 0.1s ease-in;
   }
 
   &--outline {
@@ -56,12 +102,12 @@
   }
 
   &--outline-white:hover::before {
-    transform: translateY(-4px) scaleX(0.5);
+    transform: translateY(-3px) scaleX(0.625);
     transition: all 0.1s ease-in;
   }
 
   &--outline-white:hover::after {
-    transform: translateX(-5px) scaleY(0.5);
+    transform: translateX(-3px) scaleY(0.625);
     transition: all 0.1s ease-in;
   }
 }

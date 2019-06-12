@@ -8,14 +8,21 @@
     <link rel="stylesheet" href="./build/css/main.css" />
   </head>
   <body class="font-sans text-black">
-    <header class="fixed top-0 left-0 w-full px-6 py-3 z-50">
-      <nav class="flex items-center">
+    <header class="absolute top-0 left-0 w-full z-50" data-fixed="false">
+      <nav class="flex items-center px-6 py-3">
         <div>
           <a href="#hero">
             <img
-              class="h-16"
+              class="h-16 pointer-events-none opacity-0"
               src="./build/images/sc-logo.png"
               alt="Special Camps Logo"
+              data-fixed-logo
+            />
+            <img
+              class="absolute"
+              src="./build/images/sc-logo.png"
+              alt="Special Camps Logo"
+              data-logo
             />
           </a>
         </div>
@@ -134,79 +141,90 @@
       </div>
     </section>
     <section id="programs">
-      <div class="programs__bg bg-fixed text-white text-center">
-        <h2>We Have A Camp For Everyone</h2>
-        <p>
+      <div
+        class="programs__bg bg-fixed bg-no-repeat bg-cover text-white text-center px-16 py-32"
+      >
+        <h2 class="text-5xl mb-6">We Have A Camp For Everyone</h2>
+        <p class="mb-12 font-serif leading-relaxed max-w-4xl m-auto">
           We provide a solid, joy-filled, Christ-focused camp experience and
           continued year-round advocacy for our campers and their families where
           finances aren’t a concern. We do this not only for younger ages, but
           provide a camp that is tailored to campers of any age
         </p>
-        <a class="sc-button sc-button--outline-white" href=""
-          >Camper Application</a
-        >
+        <p>
+          <a class="sc-button sc-button--outline-white" href=""
+            >Camper Application</a
+          >
+        </p>
       </div>
       <div>
-        <ul>
-          <li>
-            <p>
+        <ul class="flex text-white">
+          <li class="flex-1 bg-primary p-6">
+            <p class="flex items-center font-serif font-bold mb-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
+                class="text-white mr-4"
               >
-                <path fill="none" d="M0 0h24v24H0V0z" />
                 <path
+                  class="fill-current"
                   d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V10h16v11zm0-13H4V5h16v3z"
                 />
               </svg>
               <span>July 12 - July 17</span>
             </p>
-            <p><strong>Youth Camp - Ages 18-25</strong></p>
+            <p class="text-xl"><strong>Youth Camp - Ages 18-25</strong></p>
           </li>
-          <li>
-            <p>
+          <li class="flex-1 bg-secondary p-6">
+            <p class="flex items-center font-serif font-bold mb-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
+                class="text-white mr-4"
               >
-                <path fill="none" d="M0 0h24v24H0V0z" />
                 <path
+                  class="fill-current"
                   d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V10h16v11zm0-13H4V5h16v3z"
                 />
               </svg>
               <span>July 12 - July 17</span>
             </p>
-            <p><strong>Adult Camp - Ages 26-45</strong></p>
+            <p class="text-xl"><strong>Adult Camp - Ages 26-45</strong></p>
           </li>
-          <li>
-            <p>
+          <li class="flex-1 bg-secondary-dark px-8 py-6">
+            <p class="flex items-center font-serif font-bold mb-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
+                class="text-white mr-4"
               >
-                <path fill="none" d="M0 0h24v24H0V0z" />
                 <path
+                  class="fill-current"
                   d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V10h16v11zm0-13H4V5h16v3z"
                 />
               </svg>
               <span>July 12 - July 17</span>
             </p>
-            <p><strong>Older Adult Camp - Ages 46+</strong></p>
+            <p class="text-xl"><strong>Older Adult Camp - Ages 46+</strong></p>
           </li>
         </ul>
       </div>
-      <div>
-        <div>
-          <h2>Experience the love, community, and grace of God</h2>
-          <a href="">Volunteer Application</a>
+      <div class="flex relative">
+        <div class="flex-1 py-40 px-24">
+          <h2 class="text-5xl mb-12 max-w-lg">
+            Experience the love, community, and grace of God
+          </h2>
+          <p class="sc-button sc-button--outline">
+            <a href="">Volunteer Application</a>
+          </p>
         </div>
-        <div>
+        <div class="absolute pin-center">
           <p>
             <svg
               width="88"
@@ -222,57 +240,86 @@
             </svg>
           </p>
         </div>
-        <div>
-          <blockquote>
-            <p>
+        <div class="absolute w-full h-full top-0 bg-grey volunteer__bg"></div>
+        <div class="flex-1 flex items-end justify-end p-24">
+          <blockquote class="max-w-lg">
+            <p class="font-serif text-right leading-relaxed mb-3 text-lg">
               We provide a solid, joy-filled, Christ-focused camp experience and
               continued year-round advocacy for our campers and their families
               where finances aren’t a concern. We do this not only for younger
               ages.
             </p>
-            <p><cite>Barbara Jones - Counselor Summer 2018</cite></p>
+            <p class="text-right text-lg">
+              <cite class="not-italic"
+                >Barbara Jones - Counselor Summer 2018</cite
+              >
+            </p>
           </blockquote>
         </div>
       </div>
     </section>
-    <section id="contact">
-      <div>
-        <h2>How you can make our camps even more special</h2>
-        <p>
-          We provide a solid, joy-filled, Christ-focused camp experience and
-          continued year-round advocacy for our campers and their families where
-          finances aren’t a concern. We do this not only for younger ages.
-        </p>
-        <p>
-          <span>hello@specialcamps.com</span>
-          <span></span>
-          <span>123-456-7890</span>
-        </p>
+    <section id="contact" class="bg-gradient text-white">
+      <div class="px-24 py-32 flex items-center justify-between">
+        <div class="flex-1 mr-32 max-w-xl">
+          <h2 class="text-4xl mb-8">
+            How you can make our camps even more special
+          </h2>
+          <p class="font-serif leading-relaxed mb-12">
+            We provide a solid, joy-filled, Christ-focused camp experience and
+            continued year-round advocacy for our campers and their families
+            where finances aren’t a concern. We do this not only for younger
+            ages.
+          </p>
+          <p class="flex justify-between items-center">
+            <span>hello@specialcamps.com</span>
+            <span class="contact__spacer bg-white mx-6 flex-1"></span>
+            <span>123-456-7890</span>
+          </p>
+        </div>
+        <div class="flex-1">
+          <form action="">
+            <div class="mb-8">
+              <label class="block mb-2" for="name">Full Name</label>
+              <input
+                class="w-full bg-transparent border border-white p-4 text-serif"
+                name="name"
+                id="name"
+                type="text"
+              />
+            </div>
+            <div class="mb-8">
+              <label class="block mb-2" for="email">Email Address</label>
+              <input
+                class="w-full bg-transparent border border-white p-4 text-serif"
+                name="email"
+                id="email"
+                type="text"
+              />
+            </div>
+            <div class="mb-8">
+              <label class="block mb-2" for="message">Message</label>
+              <textarea
+                class="w-full bg-transparent border border-white p-4 h-40 text-serif"
+                name="message"
+                id="message"
+              ></textarea>
+            </div>
+            <button
+              class="block w-full sc-button sc-button--secondary"
+              type="submit"
+            >
+              Camper Application
+            </button>
+          </form>
+        </div>
       </div>
-      <div>
-        <form action="">
-          <div>
-            <label for="name">Full Name</label>
-            <input name="name" id="name" type="text" />
-          </div>
-          <div>
-            <label for="email">Email Address</label>
-            <input name="email" id="email" type="text" />
-          </div>
-          <div>
-            <label for="message">Message</label>
-            <textarea name="message" id="message"></textarea>
-          </div>
-          <input type="submit" value="Camper Application" />
-        </form>
-      </div>
-      <footer>
-        <p>Special Camps &copy; 2019</p>
-        <ul>
-          <li>
-            <a href="https://instagram.com">
+      <footer class="flex items-center justify-between p-4">
+        <p class="flex-1">Special Camps &copy; 2019</p>
+        <ul class="flex items-center">
+          <li class="mr-6 h-6">
+            <a class="" href="https://instagram.com">
               <svg
-                class="text-white"
+                class="text-white h-full w-auto"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 40.5 40.5"
               >
@@ -288,10 +335,10 @@
               </svg>
             </a>
           </li>
-          <li>
+          <li class="h-6">
             <a href="https://facebook.com">
               <svg
-                class="text-white"
+                class="text-white h-full w-auto"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 18.75 40.5"
               >
@@ -305,6 +352,6 @@
         </ul>
       </footer>
     </section>
-    <script src="./js/main.js"></script>
+    <script src="./build/js/main.js"></script>
   </body>
 </html>
