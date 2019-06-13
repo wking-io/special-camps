@@ -9,15 +9,18 @@
 @import './layout/module';
 
 .hero__heading {
-  width: 48vw;
-  font-size: 4vw;
-  left: $s16;
+  width: 42vw;
+  font-size: 6.75vw;
+  left: 6vw;
   top: 55%;
   transform: translateY(-20%);
+  line-height: 1.1;
 }
 
 .hero__img {
   width: 70vw;
+  height: 42vw;
+  min-height: 600px;
 }
 
 .hero__img::after {
@@ -25,13 +28,15 @@
   content: '';
   background-image: linear-gradient(
     to top right,
-    rgba($white, 0.8),
-    rgba($white, 0) 60%
+    rgba($white, 0.75),
+    rgba($white, 0) 45%
   );
 }
 
 .about__heading {
-  font-size: 4vw;
+  font-size: 6.5vw;
+  width: 26vw;
+  line-height: 1.1;
 }
 
 [data-slide-state='fixed'] {
@@ -49,8 +54,8 @@
 
 .programs__bg {
   background-image: linear-gradient(
-      rgba($secondary-dark, 0.35),
-      rgba($secondary-dark, 0.35)
+      rgba($secondary-dark, 0.25),
+      rgba($secondary-dark, 0.25)
     ),
     url('../images/sc_2.jpg');
 }
@@ -63,6 +68,14 @@
 
 .contact__spacer {
   height: 2px;
+}
+
+.mobile-link a {
+  @apply text-white underline;
+}
+
+.mobile-link a:hover {
+  @apply text-white no-underline;
 }
 
 @import './utils/module';

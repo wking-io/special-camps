@@ -1,8 +1,10 @@
 import '../scss/main.scss';
 
-import '../images/sc-logo.png';
+import '../images/sc-logo.svg';
 import '../images/sc_1.jpg';
 import '../images/sc_2.jpg';
+
+import '../font/league-gothic.otf';
 
 import { dom } from './modules/dom';
 import { setAttr } from './modules/attr';

@@ -14,7 +14,8 @@ module.exports = {
     colors,
     fontFamily: {
       sans: [
-        'League Spartan',
+        'League Gothic',
+        'league-gothic',
         '-apple-system',
         'BlinkMacSystemFont',
         'Segoe UI',

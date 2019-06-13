@@ -1,7 +1,7 @@
 .sc-button {
-  @apply relative bg-black text-white font-sans px-6 inline-block border border-black text-center leading-none mb-2;
-  padding-top: 1.3rem;
-  padding-bottom: 1.2rem;
+  @apply relative bg-black text-white font-sans px-6 inline-block border border-black text-center leading-none mb-2 text-2xl uppercase;
+  padding-top: 1.2rem;
+  padding-bottom: 1.1rem;
 
   &::before {
     @apply bg-secondary w-2 h-full absolute;
@@ -34,7 +34,7 @@
 
   &.sc-button--sm {
     @apply py-2 px-4;
-    padding-top: 0.7rem;
+    padding-top: 0.5rem;
   }
 
   &--primary {
