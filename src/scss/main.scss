@@ -10,18 +10,15 @@
 @import './layout/module';
 
 .hero__heading {
-  width: 38vw;
-  font-size: 5.75vw;
-  left: 6vw;
-  top: 55%;
-  transform: translateY(-20%);
+  @apply w-4/5 mx-auto;
+  font-size: 12vw;
+  transform: translateY(-25%);
   line-height: 1.1;
 }
 
 .hero__img {
-  width: 70vw;
-  height: 42vw;
-  min-height: 600px;
+  @apply w-full;
+  height: 65vw;
 }
 
 .hero__img::after {
@@ -35,8 +32,8 @@
 }
 
 .about__heading {
-  font-size: 5.75vw;
-  width: 26vw;
+  @apply w-4/5;
+  font-size: 15vw;
   line-height: 1.1;
 }
 
@@ -77,6 +74,27 @@
 
 .mobile-link a:hover {
   @apply text-white no-underline;
+}
+
+@include media('>=#{$md}') {
+  .hero__heading {
+    width: 38vw;
+    font-size: 5.75vw;
+    left: 6vw;
+    top: 55%;
+    transform: translateY(-20%);
+  }
+
+  .hero__img {
+    width: 70vw;
+    height: 42vw;
+    min-height: 600px;
+  }
+
+  .about__heading {
+    font-size: 5.75vw;
+    width: 26vw;
+  }
 }
 
 @import './utils/module';

@@ -1,19 +1,9 @@
 .mt-nav {
-  margin-top: 64px;
+  margin-top: 88px;
 }
 
 .pt-nav {
-  padding-top: 64px;
-}
-
-@include media('>=#{$lg}') {
-  .mt-nav {
-    margin-top: 72px;
-  }
-
-  .pt-nav {
-    padding-top: 72px;
-  }
+  padding-top: 88px;
 }
 
 .p-about {

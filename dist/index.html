@@ -12,25 +12,30 @@
     <link rel="stylesheet" href="./build/css/main.css" />
   </head>
   <body class="font-sans text-black tracking-wide">
-    <header class="absolute top-0 left-0 w-full z-50" data-fixed="false">
+    <header
+      id="menu"
+      class="absolute top-0 left-0 w-full z-50"
+      data-fixed="false"
+      data-menu-open="false"
+    >
       <nav class="flex items-center px-6 py-3">
         <div>
           <a href="#hero">
             <img
-              class="h-16 pointer-events-none opacity-0"
+              class="h-16 md:pointer-events-none md:opacity-0"
               src="./build/images/sc-logo.svg"
               alt="Special Camps Logo"
               data-fixed-logo
             />
             <img
-              class="absolute"
+              class="hidden md:absolute"
               src="./build/images/sc-logo.svg"
               alt="Special Camps Logo"
               data-logo
             />
           </a>
         </div>
-        <ul class="flex flex-1 items-center justify-end">
+        <ul class="hidden md:flex flex-1 items-center justify-end">
           <li class="pr-8 text-2xl"><a href="#about">About Us</a></li>
           <li class="pr-8 text-2xl"><a href="#programs">Our Programs</a></li>
           <li class="pr-8 text-2xl"><a href="#contact">Contact Us</a></li>
@@ -58,11 +63,55 @@
             </a>
           </li>
         </ul>
+        <div class="flex flex-1 items-center justify-end md:hidden">
+          <button
+            class="menu-toggle"
+            aria-controls="menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <ul
+          class="fixed top-0 bottom-0 right-0 hidden w-full max-w-md md:hidden items-center justify-end"
+        >
+          <li class="pr-8 text-2xl"><a href="#about">About Us</a></li>
+          <li class="pr-8 text-2xl"><a href="#programs">Our Programs</a></li>
+          <li class="pr-8 text-2xl"><a href="#contact">Contact Us</a></li>
+          <li class="mr-4">
+            <a
+              class="flex items-center sc-button sc-button--primary sc-button--sm text-base"
+              href="https://google.com"
+            >
+              <span class="pr-3">Donate</span>
+              <svg
+                width="auto"
+                height="9"
+                viewBox="0 0 21 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.1421 11.3137L20.799 5.65686L15.1421 6.19888e-06L13.7279 1.41422L17.9705 5.65686L13.7279 9.8995L15.1421 11.3137Z"
+                  fill="white"
+                />
+                <rect y="4.75739" width="18" height="2" fill="white" />
+              </svg>
+            </a>
+          </li>
+        </ul>
       </nav>
     </header>
-    <section id="hero" class="flex items-center">
+    <section
+      id="hero"
+      class="flex flex-col-reverse flex md:items-center mt-nav md:mt-0"
+    >
       <div class="flex-1 relative z-10">
-        <h1 class="hero__heading absolute">
+        <h1 class="hero__heading pb-4 md:pb-0 md:absolute">
           Camp Is Our Specialty. Joy Is Our Purpose.
         </h1>
       </div>
@@ -74,20 +123,25 @@
         />
       </div>
     </section>
-    <section id="about" class="-mt-20 flex relative z-10">
-      <div class="w-1/2 bg-gradient text-white p-about flex-shrink-0">
+    <section
+      id="about"
+      class="md:-mt-20 flex flex-col md:flex-row relative z-10"
+    >
+      <div
+        class="w-full md:w-1/2 bg-gradient text-white p-8 pb-12 md:p-about flex-shrink-0"
+      >
         <div class="w-full h-full relative" data-slide>
           <div data-slide-item data-slide-state="top">
             <div class="mb-12">
-              <h3 class="text-4xl mb-6">Our Vision</h3>
-              <p class="font-serif tracking-normal text-xl">
+              <h3 class="text-3xl md:text-4xl mb-4 md:mb-6">Our Vision</h3>
+              <p class="font-serif tracking-normal text-base md:text-xl">
                 Our vision is to bring joy and enrichment to the lives of
                 special needs individuals and their loved ones.
               </p>
             </div>
             <div>
-              <h3 class="text-4xl mb-6">Our Mission</h3>
-              <p class="font-serif tracking-normal text-xl">
+              <h3 class="text-3xl md:text-4xl mb-4 md:mb-6">Our Mission</h3>
+              <p class="font-serif tracking-normal text-base md:text-xl">
                 Our mission is to serve individuals with special needs and
                 demonstrate the love of Jesus through joy-filled, life-giving
                 camps and year-round camper advocacy.
@@ -96,7 +150,7 @@
           </div>
         </div>
       </div>
-      <div class="mt-20 p-about">
+      <div class="md:mt-20 p-about">
         <p class="mb-16">
           <a
             class="sc-button sc-button--outline flex items-center justify-center max-w-sm"
@@ -121,8 +175,8 @@
             </svg>
           </a>
         </p>
-        <h2 class="about__heading leading-tight mb-12">
-          Delivering joy Since 1975
+        <h2 class="about__heading leading-tight mb-8 md:mb-12">
+          Delivering joy Since 1975.
         </h2>
         <p class="font-serif tracking-normal mb-6 leading-relaxed">
           Since 1975, Special Camps has provided a safe and fun camp environment
@@ -146,9 +200,11 @@
     </section>
     <section id="programs">
       <div
-        class="programs__bg bg-fixed bg-no-repeat bg-cover text-white text-center px-16 py-32"
+        class="programs__bg bg-fixed bg-no-repeat bg-cover text-white text-center px-8 md:px-16 py-32"
       >
-        <h2 class="text-6xl mb-6">There's a Special Camp for You.</h2>
+        <h2 class="text-5xl md:text-6xl mb-6 leading-tight">
+          There's a Special Camp for You.
+        </h2>
         <p
           class="mb-12 font-serif tracking-normal leading-relaxed max-w-4xl m-auto"
         >
@@ -164,7 +220,7 @@
         </p>
       </div>
       <div>
-        <ul class="flex text-white">
+        <ul class="flex flex-col md:flex-row text-white">
           <li class="flex-1 bg-primary px-8 pt-8 pb-6">
             <p
               class="flex items-center font-serif tracking-normal font-bold mb-2"

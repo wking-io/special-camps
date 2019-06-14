@@ -1,36 +1,29 @@
 .menu-toggle {
+  @apply relative;
   height: 10px;
   width: 26px;
   display: inherit;
 
   &:active,
   &:focus {
-    outline: none;
-  }
-
-  [data-header-fixed='true'] & span {
-    @apply bg-primary;
+    @apply outline-none;
   }
 
   & span {
-    display: block;
-    position: absolute;
+    @apply bg-secondary-dark block absolute w-full opacity-100 right-0;
     height: 3px;
-    width: 100%;
-    opacity: 1;
     top: 50%;
-    right: 0;
     transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
 
     &:first-child {
       transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-      transform: translateY(-120%) rotate(0deg);
+      transform: translateY(-200%) rotate(0deg);
     }
 
     &:last-child {
-      width: 80%;
+      @apply w-4/5;
       transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-      transform: translateY(120%) rotate(0deg);
+      transform: translateY(200%) rotate(0deg);
     }
   }
 
@@ -48,11 +41,5 @@
       transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
       transform: translateY(-50%) rotate(-45deg);
     }
-  }
-}
-
-@include media('>=#{$lg}') {
-  button.menu-toggle {
-    margin-left: 12vw;
   }
 }
