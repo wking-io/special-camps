@@ -1,24 +1,38 @@
-@include media('>=#{$md}') {
+.menu--mobile {
+  transform: translateX(100%);
+  transition: all 0.2s ease-in;
+}
+
+[data-menu-open='true'] .menu--mobile {
+  transform: translateX(0%);
+  transition: all 0.2s ease-out;
+}
+
+[data-fixed-logo] {
+  z-index: -1;
+}
+
+[data-logo] {
+  height: 5.5rem;
+  left: 14vw;
+  transform: translateX(-50%);
+}
+
+header[data-fixed='true'] {
+  @apply fixed bg-white;
+
   [data-fixed-logo] {
-    z-index: -1;
+    @apply pointer-events-auto opacity-100 z-10;
   }
 
   [data-logo] {
-    height: 7.5rem;
-    left: 14vw;
-    transform: translateX(-50%);
+    @apply pointer-events-none opacity-0;
+    z-index: -1;
   }
+}
 
-  header[data-fixed='true'] {
-    @apply fixed bg-white;
-
-    [data-fixed-logo] {
-      @apply pointer-events-auto opacity-100 z-10;
-    }
-
-    [data-logo] {
-      @apply pointer-events-none opacity-0;
-      z-index: -1;
-    }
+@include media('>=#{$xl}') {
+  [data-logo] {
+    height: 7.5rem;
   }
 }

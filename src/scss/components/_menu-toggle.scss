@@ -28,7 +28,10 @@
   }
 
   &[aria-expanded='true'] span {
+    @apply opacity-0;
+
     &:first-child {
+      @apply opacity-100;
       width: 70%;
       background-color: $primary;
       transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
@@ -36,6 +39,7 @@
     }
 
     &:last-child {
+      @apply opacity-100;
       width: 70%;
       background-color: $primary;
       transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);

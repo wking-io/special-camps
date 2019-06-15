@@ -22,20 +22,20 @@
         <div>
           <a href="#hero">
             <img
-              class="h-16 md:pointer-events-none md:opacity-0"
+              class="h-16 lg:pointer-events-none lg:opacity-0"
               src="./build/images/sc-logo.svg"
               alt="Special Camps Logo"
               data-fixed-logo
             />
             <img
-              class="hidden md:absolute"
+              class="hidden lg:block absolute"
               src="./build/images/sc-logo.svg"
               alt="Special Camps Logo"
               data-logo
             />
           </a>
         </div>
-        <ul class="hidden md:flex flex-1 items-center justify-end">
+        <ul class="hidden lg:flex flex-1 items-center justify-end">
           <li class="pr-8 text-2xl"><a href="#about">About Us</a></li>
           <li class="pr-8 text-2xl"><a href="#programs">Our Programs</a></li>
           <li class="pr-8 text-2xl"><a href="#contact">Contact Us</a></li>
@@ -63,7 +63,9 @@
             </a>
           </li>
         </ul>
-        <div class="flex flex-1 items-center justify-end md:hidden">
+        <div
+          class="flex flex-1 items-center justify-end lg:hidden relative z-50"
+        >
           <button
             class="menu-toggle"
             aria-controls="menu"
@@ -75,14 +77,20 @@
           </button>
         </div>
         <ul
-          class="fixed top-0 bottom-0 right-0 hidden w-full max-w-md md:hidden items-center justify-end"
+          class="menu--mobile fixed top-0 bottom-0 right-0 w-full max-w-md lg:hidden items-center justify-end bg-secondary-dark p-12"
         >
-          <li class="pr-8 text-2xl"><a href="#about">About Us</a></li>
-          <li class="pr-8 text-2xl"><a href="#programs">Our Programs</a></li>
-          <li class="pr-8 text-2xl"><a href="#contact">Contact Us</a></li>
+          <li class="pb-2 text-3xl text-white">
+            <a href="#about">About Us</a>
+          </li>
+          <li class="pb-2 text-3xl text-white">
+            <a href="#programs">Our Programs</a>
+          </li>
+          <li class="pb-8 text-3xl text-white">
+            <a href="#contact">Contact Us</a>
+          </li>
           <li class="mr-4">
             <a
-              class="flex items-center sc-button sc-button--primary sc-button--sm text-base"
+              class="flex items-center sc-button sc-button--primary sc-button--sm w-32"
               href="https://google.com"
             >
               <span class="pr-3">Donate</span>
@@ -108,10 +116,10 @@
     </header>
     <section
       id="hero"
-      class="flex flex-col-reverse flex md:items-center mt-nav md:mt-0"
+      class="flex flex-col-reverse lg:flex-row lg:items-center mt-nav lg:mt-0"
     >
       <div class="flex-1 relative z-10">
-        <h1 class="hero__heading pb-4 md:pb-0 md:absolute">
+        <h1 class="hero__heading pb-4 lg:pb-0 lg:absolute">
           Camp Is Our Specialty. Joy Is Our Purpose.
         </h1>
       </div>
@@ -125,7 +133,7 @@
     </section>
     <section
       id="about"
-      class="md:-mt-20 flex flex-col md:flex-row relative z-10"
+      class="lg:-mt-20 flex flex-col md:flex-row relative z-10"
     >
       <div
         class="w-full md:w-1/2 bg-gradient text-white p-8 pb-12 md:p-about flex-shrink-0"
@@ -133,15 +141,15 @@
         <div class="w-full h-full relative" data-slide>
           <div data-slide-item data-slide-state="top">
             <div class="mb-12">
-              <h3 class="text-3xl md:text-4xl mb-4 md:mb-6">Our Vision</h3>
-              <p class="font-serif tracking-normal text-base md:text-xl">
+              <h3 class="text-3xl lg:text-4xl mb-4 lg:mb-6">Our Vision</h3>
+              <p class="font-serif tracking-normal text-base lg:text-xl">
                 Our vision is to bring joy and enrichment to the lives of
                 special needs individuals and their loved ones.
               </p>
             </div>
             <div>
-              <h3 class="text-3xl md:text-4xl mb-4 md:mb-6">Our Mission</h3>
-              <p class="font-serif tracking-normal text-base md:text-xl">
+              <h3 class="text-3xl lg:text-4xl mb-4 lg:mb-6">Our Mission</h3>
+              <p class="font-serif tracking-normal text-base lg:text-xl">
                 Our mission is to serve individuals with special needs and
                 demonstrate the love of Jesus through joy-filled, life-giving
                 camps and year-round camper advocacy.
@@ -150,7 +158,7 @@
           </div>
         </div>
       </div>
-      <div class="md:mt-20 p-about">
+      <div class="lg:mt-20 p-8 md:p-about">
         <p class="mb-16">
           <a
             class="sc-button sc-button--outline flex items-center justify-center max-w-sm"
@@ -200,37 +208,39 @@
     </section>
     <section id="programs">
       <div
-        class="programs__bg bg-fixed bg-no-repeat bg-cover text-white text-center px-8 md:px-16 py-32"
+        class="programs__bg bg-fixed bg-no-repeat bg-cover text-white text-center px-8 lg:px-16 py-32"
       >
-        <h2 class="text-5xl md:text-6xl mb-6 leading-tight">
-          There's a Special Camp for You.
-        </h2>
-        <p
-          class="mb-12 font-serif tracking-normal leading-relaxed max-w-4xl m-auto"
-        >
-          Our primary goal is to provide a solid, joy-filled, Christ-focused
-          camp experience. Campers at Special Camps will have a fun outdoor camp
-          experience and learn about Christ’s love while creating lasting
-          friendships with other campers and volunteers.
-        </p>
-        <p>
-          <a class="sc-button sc-button--outline-white" href=""
-            >Camper Application</a
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-5xl lg:text-6xl mb-6 leading-tight">
+            There's a Special Camp for You.
+          </h2>
+          <p
+            class="mb-12 font-serif tracking-normal leading-relaxed max-w-4xl m-auto"
           >
-        </p>
+            Our primary goal is to provide a solid, joy-filled, Christ-focused
+            camp experience. Campers at Special Camps will have a fun outdoor
+            camp experience and learn about Christ’s love while creating lasting
+            friendships with other campers and volunteers.
+          </p>
+          <p>
+            <a class="sc-button sc-button--outline-white" href=""
+              >Camper Application</a
+            >
+          </p>
+        </div>
       </div>
       <div>
         <ul class="flex flex-col md:flex-row text-white">
           <li class="flex-1 bg-primary px-8 pt-8 pb-6">
             <p
-              class="flex items-center font-serif tracking-normal font-bold mb-2"
+              class="flex items-center font-serif tracking-normal font-bold mb-2 h-6 md:h-4 lg:h-6 md:text-sm lg:text-base"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="auto"
+                height="100%"
                 viewBox="0 0 24 24"
-                class="text-white mr-4"
+                class="text-white mr-4 md:mr-3 lg:mr-4"
               >
                 <path
                   class="fill-current"
@@ -239,18 +249,20 @@
               </svg>
               <span>July 12 - July 17</span>
             </p>
-            <p class="text-3xl">Youth Camp - Ages 18-25</p>
+            <p class="text-3xl md:text-2xl lg:text-3xl">
+              Youth Camp - Ages 18-25
+            </p>
           </li>
           <li class="flex-1 bg-secondary px-8 pt-8 pb-6">
             <p
-              class="flex items-center font-serif tracking-normal font-bold mb-2"
+              class="flex items-center font-serif tracking-normal font-bold mb-2 h-6 md:h-4 lg:h-6 md:text-sm lg:text-base"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="auto"
+                height="100%"
                 viewBox="0 0 24 24"
-                class="text-white mr-4"
+                class="text-white mr-4 md:mr-3 lg:mr-4"
               >
                 <path
                   class="fill-current"
@@ -259,18 +271,20 @@
               </svg>
               <span>July 12 - July 17</span>
             </p>
-            <p class="text-3xl">Adult Camp - Ages 26-45</p>
+            <p class="text-3xl md:text-2xl lg:text-3xl">
+              Adult Camp - Ages 26-45
+            </p>
           </li>
           <li class="flex-1 bg-secondary-dark px-8 pt-8 pb-6">
             <p
-              class="flex items-center font-serif tracking-normal font-bold mb-2"
+              class="flex items-center font-serif tracking-normal font-bold mb-2 h-6 md:h-4 lg:h-6 md:text-sm lg:text-base"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="auto"
+                height="100%"
                 viewBox="0 0 24 24"
-                class="text-white mr-4"
+                class="text-white mr-4 md:mr-3 lg:mr-4"
               >
                 <path
                   class="fill-current"
@@ -279,13 +293,17 @@
               </svg>
               <span>July 12 - July 17</span>
             </p>
-            <p class="text-3xl">Older Adult Camp - Ages 46+</p>
+            <p class="text-3xl md:text-2xl lg:text-3xl">
+              Older Adult Camp - Ages 46+
+            </p>
           </li>
         </ul>
       </div>
-      <div class="flex relative">
-        <div class="flex-1 py-40 px-24">
-          <h2 class="text-6xl mb-12 max-w-lg leading-tight">
+      <div
+        class="flex flex-col items-center lg:items-stretch lg:flex-row text-center lg:text-left relative"
+      >
+        <div class="flex-1 p-12 pb-24 lg:py-40 lg:px-24">
+          <h2 class="text-5xl xl:text-6xl mb-12 max-w-lg leading-tight">
             Come experience authentic joy and sincere compassion.
           </h2>
           <p class="sc-button sc-button--outline">
@@ -308,18 +326,20 @@
             </svg>
           </p>
         </div>
-        <div class="absolute w-full h-full top-0 bg-grey volunteer__bg"></div>
-        <div class="flex-1 flex items-end justify-end p-24">
+        <div class="absolute w-full h-full bg-grey volunteer__bg"></div>
+        <div
+          class="flex-1 flex items-center lg:items-end justify-end px-12 pt-32 pb-24 sm:pb-12 md:pb-16 lg:p-16 xl:p-24"
+        >
           <blockquote class="max-w-lg">
             <p
-              class="font-serif tracking-normal text-right leading-relaxed mb-3 text-lg"
+              class="font-serif tracking-normal text-center lg:text-right leading-relaxed mb-3 text-lg"
             >
               We provide a solid, joy-filled, Christ-focused camp experience and
               continued year-round advocacy for our campers and their families
               where finances aren’t a concern. We do this not only for younger
               ages.
             </p>
-            <p class="text-right text-2xl">
+            <p class="text-center lg:text-right text-2xl">
               <cite class="not-italic"
                 >Barbara Jones - Counselor Summer 2018</cite
               >
@@ -329,9 +349,11 @@
       </div>
     </section>
     <section id="contact" class="bg-gradient text-white">
-      <div class="px-24 py-32 flex items-center justify-between">
-        <div class="flex-1 mr-32 max-w-xl">
-          <h2 class="text-6xl mb-8 leading-tight">
+      <div
+        class="px-8 py-16 lg:px-24 lg:py-32 flex flex-col lg:flex-row items-center justify-between"
+      >
+        <div class="flex-1 mb-16 lg:mr-32 max-w-xl">
+          <h2 class="text-5xl xl:text-6xl mb-8 leading-tight">
             You can make our camps even more special.
           </h2>
           <p class="font-serif tracking-normal leading-relaxed mb-12">
@@ -346,7 +368,7 @@
             <span class="mobile-link">123-456-7890</span>
           </p>
         </div>
-        <div class="flex-1">
+        <div class="flex-1 w-full max-w-xl mx-auto">
           <form action="">
             <div class="mb-8">
               <label class="block mb-2 text-2xl" for="name">Full Name</label>

@@ -8,3 +8,17 @@ export const trace = msg => val => console.log(msg, val) || val; // eslint-disab
 export const attrToBool = (el, attr) => el.getAttribute(attr) === 'true';
 
 export const noop = () => {};
+
+export const debounce = (func, wait) => {
+  let timeout;
+  return (...theArgs) => {
+    const later = () => {
+      func(...theArgs);
+    };
+
+    if (timeout !== undefined) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(later, wait);
+  };
+};

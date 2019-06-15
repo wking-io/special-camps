@@ -9,26 +9,27 @@ import '../font/league-gothic.otf';
 import { dom } from './modules/dom';
 import { setAttr } from './modules/attr';
 import { pipe } from './modules/utils';
+import { setupMenu } from './modules/menu';
 
-if (window.innerWidth > 768) {
-  const logo = dom('[data-logo]');
-  const logoPos = logo.getBoundingClientRect();
-  const header = dom('[data-fixed]');
+const logo = dom('[data-logo]');
+const logoPos = logo.getBoundingClientRect();
+const header = dom('[data-fixed]');
 
-  const manageHeader = (pos, parent) => e => {
-    if (pos <= window.scrollY) {
-      setAttr('data-fixed', true, parent);
-    } else {
-      setAttr('data-fixed', false, parent);
-    }
+const manageHeader = (pos, parent) => e => {
+  if (pos <= window.scrollY) {
+    setAttr('data-fixed', true, parent);
+  } else {
+    setAttr('data-fixed', false, parent);
+  }
 
-    return e;
-  };
+  return e;
+};
 
-  const slideItem = dom('[data-slide-item]');
-  const slide = dom('[data-slide');
+const slideItem = dom('[data-slide-item]');
+const slide = dom('[data-slide');
 
-  const manageSlide = (parent, item, halfItem) => e => {
+const manageSlide = (parent, item, halfItem) => e => {
+  if (window.innerWidth >= 768) {
     const { top, bottom } = parent.getBoundingClientRect();
     const parentTop = top + halfItem;
     const parentBottom = bottom - halfItem;
@@ -40,19 +41,18 @@ if (window.innerWidth > 768) {
     } else {
       setAttr('data-slide-state', 'top', item);
     }
-
-    return e;
-  };
-
-  if (logo && header && slideItem && slide) {
-    const handleHeader = manageHeader(logoPos.bottom + window.scrollY, header);
-    const handleSlide = manageSlide(
-      slide,
-      slideItem,
-      slideItem.offsetHeight / 2
-    );
-    handleHeader();
-    handleSlide();
-    window.addEventListener('scroll', pipe(handleHeader, handleSlide));
   }
+
+  return e;
+};
+
+const menuToggle = dom('.menu-toggle');
+
+if (logo && header && slideItem && slide && menuToggle) {
+  const handleHeader = manageHeader(logoPos.bottom + window.scrollY, header);
+  const handleSlide = manageSlide(slide, slideItem, slideItem.offsetHeight / 2);
+  handleHeader();
+  handleSlide();
+  setupMenu(header, menuToggle);
+  window.addEventListener('scroll', pipe(handleHeader, handleSlide));
 }

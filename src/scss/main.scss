@@ -59,8 +59,9 @@
 }
 
 .volunteer__bg {
-  transform: skewX(-45deg);
-  left: 50%;
+  transform: skewY(-25deg);
+  top: 50%;
+  left: 0;
   z-index: -1;
 }
 
@@ -77,6 +78,13 @@
 }
 
 @include media('>=#{$md}') {
+  .about__heading {
+    font-size: 5.75vw;
+    width: 26vw;
+  }
+}
+
+@include media('>=#{$lg}') {
   .hero__heading {
     width: 38vw;
     font-size: 5.75vw;
@@ -91,9 +99,11 @@
     min-height: 600px;
   }
 
-  .about__heading {
-    font-size: 5.75vw;
-    width: 26vw;
+  .volunteer__bg {
+    transform: skewX(-45deg);
+    top: 0;
+    left: 50%;
+    z-index: -1;
   }
 }
 

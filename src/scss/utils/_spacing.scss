@@ -6,6 +6,8 @@
   padding-top: 88px;
 }
 
-.p-about {
-  padding: 6vw;
+@responsive {
+  .p-about {
+    padding: 6vw;
+  }
 }
