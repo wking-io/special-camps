@@ -26,7 +26,7 @@ const manageHeader = (pos, parent) => e => {
 };
 
 const slideItem = dom('[data-slide-item]');
-const slide = dom('[data-slide');
+const slide = dom('[data-slide]');
 
 const manageSlide = (parent, item, halfItem) => e => {
   if (window.innerWidth >= 768) {
