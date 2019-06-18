@@ -27,7 +27,7 @@
     }
   }
 
-  &[aria-expanded='true'] span {
+  [data-menu-open='true'] & span {
     @apply opacity-0;
 
     &:first-child {

@@ -6,7 +6,7 @@ import '../images/sc_2.jpg';
 
 import '../font/league-gothic.otf';
 
-import { dom } from './modules/dom';
+import { dom, domAll } from './modules/dom';
 import { setAttr } from './modules/attr';
 import { pipe } from './modules/utils';
 import { setupMenu } from './modules/menu';
@@ -46,13 +46,13 @@ const manageSlide = (parent, item, halfItem) => e => {
   return e;
 };
 
-const menuToggle = dom('.menu-toggle');
+const menuToggles = domAll('[data-menu-toggle]');
 
-if (logo && header && slideItem && slide && menuToggle) {
+if (logo && header && slideItem && slide) {
   const handleHeader = manageHeader(logoPos.bottom + window.scrollY, header);
   const handleSlide = manageSlide(slide, slideItem, slideItem.offsetHeight / 2);
   handleHeader();
   handleSlide();
-  setupMenu(header, menuToggle);
+  menuToggles.forEach(menuToggle => setupMenu(header, menuToggle));
   window.addEventListener('scroll', pipe(handleHeader, handleSlide));
 }
