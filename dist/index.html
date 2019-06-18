@@ -420,7 +420,17 @@
           </p>
         </div>
         <div class="flex-1 w-full max-w-xl mx-auto">
-          <form name="contact" data-netlify="true" method="POST">
+          <form
+            name="contact"
+            data-netlify="true"
+            method="POST"
+            action="/thank-you.html"
+          >
+            <p class="hidden">
+              <label
+                >Don’t fill this out if you're human: <input name="bot-field"
+              /></label>
+            </p>
             <div class="mb-8">
               <label class="block mb-2 text-2xl" for="name">Full Name</label>
               <input
